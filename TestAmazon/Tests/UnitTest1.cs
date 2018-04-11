@@ -51,16 +51,31 @@ namespace Tests
                                     throw new Exception("Element not found");
                                 }
                             }
-
+                            else
+                            {
+                                throw new Exception("Element not found");
+                            }
+                        }
+                        else
+                        {
                             throw new Exception("Element not found");
                         }
+                    }
+                    else
+                    {
                         throw new Exception("Element not found");
                     }
+                }
+                else
+                {
                     throw new Exception("Element not found");
                 }
+            }
+            else
+            {
                 throw new Exception("Element not found");
             }
-            throw new Exception("Element not found");
+            driver.Close();
         }
 
         private static void ParseProduct(ChromeDriver driver)
