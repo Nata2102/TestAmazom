@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace TestAmazon
+namespace Tests
 {
-    class Program
+    [TestClass]
+    public class UnitTest1
     {
         private const string PAGE = "https://www.amazon.com/";
         private const string CATEGORYNAME = "Departments";
@@ -15,7 +17,9 @@ namespace TestAmazon
         private const string BUTTONID = "add-to-cart-button";
         private const string CARTURL = "https://www.amazon.com/gp/cart/view.html/ref=nav_cart";
         private const string CARTPRODUCTLINK = "sc-product-link";
-        static void Main(string[] args)
+
+        [TestMethod]
+        public void TestMethod1()
         {
             var driver = new ChromeDriver();
             driver.Navigate().GoToUrl(PAGE);
@@ -24,7 +28,7 @@ namespace TestAmazon
             {
                 categoryLink.Click();
                 IWebElement cellPhoneLink = driver.FindElement(By.LinkText(CELLPHONECATNAME));
-                if (cellPhoneLink!=null)
+                if (cellPhoneLink != null)
                 {
                     cellPhoneLink.Click();
                     IWebElement cellPhoneLinkII = driver.FindElementByClassName(CELLPHONECATCLASSNAME);
@@ -44,32 +48,40 @@ namespace TestAmazon
                                 var productsInCart = driver.FindElementsByClassName(CARTPRODUCTLINK);
                                 if (!productsInCart.Any())
                                 {
-                                    Console.WriteLine("Product has not been added to the cart");
+                                    throw new Exception("Element not found");
                                 }
-                                else
-                                {
-                                    Console.WriteLine("Product has been added to the cart");
-                                }
-
-                                Console.Read();
                             }
+
+                            throw new Exception("Element not found");
                         }
+                        throw new Exception("Element not found");
                     }
+                    throw new Exception("Element not found");
                 }
+                throw new Exception("Element not found");
             }
+            throw new Exception("Element not found");
         }
 
         private static void ParseProduct(ChromeDriver driver)
         {
-            using (System.IO.StreamWriter file =
-                new System.IO.StreamWriter("productInfo.txt"))
+            try
             {
-                var titleElement = driver.FindElementById("productTitle");
-                file.WriteLine($"Title:{titleElement.Text}");
-                var priceElement = driver.FindElementById("priceblock_ourprice");
-                file.WriteLine($"Price:{priceElement.Text}");
+                using (System.IO.StreamWriter file =
+                    new System.IO.StreamWriter("productInfo.txt"))
+                {
+                    var titleElement = driver.FindElementById("productTitle");
+                    file.WriteLine($"Title:{titleElement.Text}");
+                    var priceElement = driver.FindElementById("priceblock_ourprice");
+                    file.WriteLine($"Price:{priceElement.Text}");
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Parsing product failed");
             }
 
         }
+       
     }
 }

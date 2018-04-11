@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSMEurope", "WSMEurope\WSMEurope.csproj", "{1E9BA6D9-3FCA-41EE-9BB0-042B3B351CC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAmazon", "TestAmazon\TestAmazon.csproj", "{1E9BA6D9-3FCA-41EE-9BB0-042B3B351CC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{B1366FB4-FBDE-44A8-AAEC-5C7B79F2404A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1E9BA6D9-3FCA-41EE-9BB0-042B3B351CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E9BA6D9-3FCA-41EE-9BB0-042B3B351CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E9BA6D9-3FCA-41EE-9BB0-042B3B351CC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1366FB4-FBDE-44A8-AAEC-5C7B79F2404A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1366FB4-FBDE-44A8-AAEC-5C7B79F2404A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1366FB4-FBDE-44A8-AAEC-5C7B79F2404A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1366FB4-FBDE-44A8-AAEC-5C7B79F2404A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
